@@ -1,0 +1,80 @@
+
+print "Please enter a number\n";
+$number1 = <STDIN>;
+chomp $number1;
+#Ask user for first number
+
+print "Please enter a second number\n";
+$number2 = <STDIN>;
+chomp $number2;
+#Ask user for second number
+
+
+while ( $number2 == 0 )
+{
+  print "You entered $number2\nPlease enter a non-zero number\n";
+  $number2 = <STDIN>;
+  chomp $number2;
+}
+#if number is 0 reloop
+
+print "Please enter your name: \n" ;
+$name = <STDIN>;
+chomp $name;
+#Ask user for "name"
+
+print "$name, how many times do you want to run your program?\n";
+$total_loops=<STDIN>;
+chomp $total_loops;
+
+#Ask user how many times they want to run the program
+
+print "\n$name, you entered $number1 and $number2\n";
+
+for($ctr=1; $ctr <= $total_loops; $ctr++)
+{
+print("\nDisplaying $ctr of $total_loops loops \n\n");
+print("Please make a selection using the menu below\n");
+print "1 - Add\n";
+print "2 - Multiply\n";
+print "3 - Modulus\n";
+print "4 - Exit\n";
+$answer = <STDIN>;
+chomp $answer;
+
+#ask user to select math function from list 
+
+print " $You selected $answer as your menu choice\n\n";
+
+if($answer == 1)
+{
+  $sum = $number1 + $number2;
+  print("$number1 + $number2 is $sum\n");
+ }
+ #if user selects 1 the numbers add and display
+ 
+elsif($answer == 2)
+{
+  $prod = $number1*$number2;
+  print "$number1 * $number2 is $prod\n";
+}
+#if use selects 2 the numbers  multiply and display
+
+elsif($answer == 3)
+{
+  $mod =($number1 % $number2);
+  print "$number1 % $number2 is $mod\n";
+}
+#if user selects 3 the numbers modulus and display
+
+elsif($answer == 4)
+{
+    print "Exiting program";
+    exit 0;
+ }
+#if user selects 4 program will exit
+else
+ {  print "$answer is not a valid menu choice! Please retry.\n";}
+   print ("\n");
+ }
+#if user selects option that isnt there, user is asked to retry
